@@ -21,8 +21,10 @@ dependencyRecommendations {
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.gradle.org/gradle/libs-releases' }
 }
 
 dependencies {
+    // TODO add gradle tooling api dependency https://docs.gradle.org/current/userguide/embedding.html
     testCompile 'junit:junit'
 }
