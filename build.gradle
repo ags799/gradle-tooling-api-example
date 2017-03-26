@@ -25,6 +25,8 @@ repositories {
 }
 
 dependencies {
-    // TODO add gradle tooling api dependency https://docs.gradle.org/current/userguide/embedding.html
+    compile 'org.gradle:gradle-tooling-api'
+
     testCompile 'junit:junit'
+    testCompile 'org.assertj:assertj-core'
 }
