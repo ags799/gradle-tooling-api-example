@@ -12,11 +12,12 @@ public final class GradleProjectsShould {
     @Rule
     public TemporaryFolder temporaryFolder = new TemporaryFolder();
 
+    // try running this with a nonexistent JVM tmpDir argument
     @Test
     public void return_gradle_project_for_gradle_project() throws Exception {
         temporaryFolder.newFile("build.gradle");
         GradleProject gradleProject = GradleProjects.getGradleProject(
-                temporaryFolder.getRoot().toPath(), Paths.get(System.getProperty("java.io.tmpdir")));
+                temporaryFolder.getRoot().toPath(), Paths.get("/tmp"));
         assertThat(gradleProject.getProjectDirectory().getCanonicalPath())
                 .isEqualTo(temporaryFolder.getRoot().getCanonicalPath());
     }
